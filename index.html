@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#100b0d">
+<meta name="description" content="Anomalys: catálogo comunitario de objetos, valores e historial.">
+<title>Anomalys — Catálogo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0a0b;--panel:#151214;--panel2:#1e191b;--line:#38272b;--red:#f01c2c;--red2:#ff4a28;--gold:#ffbd59;--text:#f6f0f0;--muted:#b5a7aa;--green:#70e2a3;--shadow:0 16px 44px #0008}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#4b0c13 0,transparent 42%),var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}body.custom-bg{background-color:var(--custom-bg,#0b0a0b);background-image:linear-gradient(#090607b8,#090607cf),var(--custom-bg-image),radial-gradient(ellipse at 50% -20%,#4b0c13 0,transparent 42%);background-position:center,center,center;background-size:cover,cover,auto;background-attachment:fixed}body.custom-bg:before{content:"";position:fixed;inset:0;z-index:-1;background:var(--custom-bg,#0b0a0b)}button,input,select,textarea{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.wrap{width:min(1240px,calc(100% - 32px));margin:auto}
+.topbar{position:sticky;top:0;z-index:20;background:#0d0a0bf2;backdrop-filter:blur(14px);border-bottom:1px solid #ffffff12}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:12px;min-width:0}.brand-mark{width:48px;height:48px;flex:0 0 48px;border:2px solid #ff4b36;border-radius:12px;display:grid;place-items:center;overflow:hidden;background:linear-gradient(145deg,#fb3c24,#8e0818);box-shadow:0 0 22px #f01c2c42;font-size:24px}.brand-mark img{width:100%;height:100%;object-fit:cover;display:none}.brand-mark.has-image img{display:block}.brand-mark.has-image #brandFallback{display:none}.brand-name{font:800 25px/1 'Barlow Condensed',sans-serif;letter-spacing:1.2px;text-transform:uppercase}.brand-name span{color:var(--red2)}.brand-sub{font-size:10px;color:#c4b3b5;letter-spacing:2px;text-transform:uppercase;margin-top:4px}.nav-actions{display:flex;gap:9px;align-items:center}.icon-btn,.ghost-btn,.primary-btn,.chip{border:1px solid var(--line);border-radius:11px;color:var(--text);background:#1b1416;padding:10px 13px}.icon-btn{width:44px;height:44px;font-size:20px;display:grid;place-items:center}.primary-btn{background:linear-gradient(135deg,var(--red),#a80920);border-color:#ff514d;box-shadow:0 5px 20px #f01c2c2b;font-weight:800}.primary-btn:hover{filter:brightness(1.12)}.ghost-btn:hover,.icon-btn:hover{border-color:#e9484c;background:#2a171b}.admin-trigger{display:none;gap:8px;align-items:center}.admin-trigger.visible{display:flex}.admin-trigger .primary-btn{padding:10px 13px}
+.mobile-menu{display:none;position:absolute;right:16px;top:68px;background:#1b1114;border:1px solid #603038;border-radius:14px;padding:10px;min-width:210px;box-shadow:var(--shadow)}.mobile-menu.open{display:grid;gap:6px}.mobile-menu a,.mobile-menu button{text-align:left;padding:12px;border:0;border-radius:8px;background:transparent;color:white}.mobile-menu a:hover,.mobile-menu button:hover{background:#39161d}
+.hero{padding:24px 0 30px}.hero-panel{position:relative;overflow:hidden;min-height:330px;border:1px solid #682329;border-radius:22px;background:#18090b;box-shadow:var(--shadow);display:grid;grid-template-columns:1.1fr .9fr}.hero-copy{padding:clamp(24px,4vw,48px);display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2;background:linear-gradient(90deg,#14090bf9 0%,#16090be8 65%,#16090b30 100%)}.eyebrow{font-size:11px;font-weight:800;letter-spacing:2.3px;color:#ff8d77;text-transform:uppercase;display:flex;align-items:center;gap:8px}.eyebrow:before{content:"";width:24px;height:2px;background:var(--red2)}h1{font:800 clamp(42px,6vw,74px)/.92 'Barlow Condensed',sans-serif;letter-spacing:.4px;text-transform:uppercase;margin:15px 0 14px;max-width:650px}h1 span{color:#ff4438;text-shadow:0 0 28px #f01c2c42}.hero-copy p{color:#d2c3c5;max-width:480px;line-height:1.65;margin:0 0 22px}.hero-buttons{display:flex;gap:10px;flex-wrap:wrap}.hero-art{position:absolute;right:0;top:0;bottom:0;width:56%;background:linear-gradient(90deg,#16090b 0%,#16090b00 35%),linear-gradient(0deg,#16090b88,transparent 35%),url('assets/anomaly-hero.jpg') center 36%/cover no-repeat;filter:saturate(1.15)}.hero-statline{display:flex;gap:18px;flex-wrap:wrap;margin-top:25px;color:#c8b6b8;font-size:12px}.hero-statline strong{color:#fff;font-size:15px;display:block;margin-bottom:3px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:12px 0 17px}.section-kicker{font-size:10px;color:#ff8071;letter-spacing:2px;font-weight:800;text-transform:uppercase}.section-head h2{font:800 34px/.95 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:6px 0 0}.section-head p{margin:6px 0 0;color:var(--muted);font-size:13px}.count-pill{font-size:12px;color:#f7c0c0;background:#311419;border:1px solid #61252d;border-radius:999px;padding:8px 12px;white-space:nowrap}
+.toolbar{display:grid;grid-template-columns:minmax(180px,1.5fr) repeat(2,minmax(130px,.65fr)) auto;gap:10px;background:#151113;border:1px solid var(--line);border-radius:15px;padding:12px;margin-bottom:18px}.field-wrap{position:relative}.field-wrap .search-icon{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:#a99599}.field,.select,.area{width:100%;background:#0e0b0c;color:var(--text);border:1px solid #493137;border-radius:10px;padding:12px 13px;outline:none;min-height:44px}.field-wrap .field{padding-left:40px}.field:focus,.select:focus,.area:focus{border-color:#f3484d;box-shadow:0 0 0 3px #f01c2c1a}.view-toggle{display:flex;gap:5px;align-items:center}.view-toggle button{border:1px solid #493137;background:#0e0b0c;color:#cdbdc0;border-radius:9px;width:42px;height:44px}.view-toggle button.active{background:#57131c;border-color:#f3484d;color:#fff}
+.categories{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}.chip{font-size:12px;padding:9px 13px;color:#d4c5c7}.chip.active{background:#59131d;border-color:#ff4b4b;color:#fff;box-shadow:0 0 18px #e21c2d20}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}.item-card{background:linear-gradient(180deg,#21191c,#151113);border:1px solid #483137;border-radius:15px;overflow:hidden;position:relative;transition:transform .18s,border-color .18s,box-shadow .18s;min-width:0}.item-card:hover{transform:translateY(-4px);border-color:#e7444b;box-shadow:0 13px 28px #0006}.item-card.featured{border-color:#d12d39}.item-top{height:29px;display:flex;justify-content:space-between;align-items:center;padding:0 10px;background:#282023;border-bottom:1px solid #554146;color:#d7c9cb;font-size:10px}.rarity-dot{display:flex;align-items:center;gap:5px}.rarity-dot i{width:6px;height:6px;background:var(--rarity,#ff4b42);border-radius:50%;box-shadow:0 0 9px var(--rarity,#ff4b42)}.item-visual{height:180px;display:grid;place-items:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 38%,#ffffff13,transparent 52%),repeating-conic-gradient(from 10deg at 50% 50%,#ffffff05 0deg 8deg,transparent 8deg 16deg),#171214}.item-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#151113 0%,transparent 38%,#0002 100%);pointer-events:none}.item-visual img{width:100%;height:100%;object-fit:contain;padding:12px;position:relative;z-index:1;filter:drop-shadow(0 10px 10px #0008)}.item-symbol{font-size:90px;line-height:1;filter:drop-shadow(0 0 15px var(--glow,#ff4b42));transform:rotate(-13deg);color:var(--rarity,#ff4b42);text-shadow:0 3px 0 #0008;z-index:1}.item-label{position:absolute;z-index:2;bottom:9px;left:10px;font-size:10px;color:#d9cacc;background:#100c0dbb;border:1px solid #ffffff1b;border-radius:5px;padding:4px 6px}.item-info{padding:12px}.item-name{font-size:14px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:6px}.item-desc{font-size:11px;color:#a9999d;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-height:15px}.price-line{display:flex;align-items:baseline;justify-content:space-between;gap:5px;margin-top:13px}.price{font:800 25px/1 'Barlow Condensed',sans-serif;color:#fff;white-space:nowrap}.trend{font-size:10px;border-radius:6px;padding:5px 6px;background:#1d3329;color:#85e7b0;white-space:nowrap}.trend.down{background:#35191b;color:#ff9b9b}.trend.stable{background:#282326;color:#c5b7ba}.item-meta{display:flex;justify-content:space-between;gap:8px;border-top:1px solid #ffffff0e;margin-top:12px;padding-top:10px;color:#a9999d;font-size:10px}.card-actions{display:flex;gap:7px;margin-top:11px}.card-actions button{flex:1;background:#25191c;border:1px solid #4c3036;color:#eee;border-radius:8px;padding:8px 6px;font-size:11px}.card-actions button:hover{border-color:#ef424b}.fav-btn{position:absolute;top:35px;right:9px;z-index:3;border:1px solid #ffffff26;background:#100b0bb8;color:white;border-radius:50%;width:30px;height:30px;font-size:16px}.fav-btn.on{color:#ff596b;border-color:#ff596b}
+.list-mode{grid-template-columns:1fr}.list-mode .item-card{display:grid;grid-template-columns:40px 100px minmax(130px,1fr) auto;align-items:center}.list-mode .item-top{height:100%;border:0;padding:0;justify-content:center}.list-mode .item-visual{height:95px}.list-mode .item-info{display:contents}.list-mode .item-name,.list-mode .item-desc{grid-column:3}.list-mode .item-name{align-self:end}.list-mode .item-desc{align-self:start}.list-mode .price-line{grid-column:4;grid-row:1/3;padding-right:12px;display:grid}.list-mode .item-meta,.list-mode .card-actions{display:none}
+.empty{grid-column:1/-1;text-align:center;border:1px dashed #53343a;border-radius:15px;padding:50px 20px;color:#bba9ad}.empty strong{display:block;color:white;font-size:18px;margin-bottom:8px}
+.history-panel{margin:45px 0 30px;border:1px solid var(--line);border-radius:17px;background:#141012;padding:20px}.history-list{display:grid;gap:8px}.history-row{display:flex;justify-content:space-between;gap:15px;align-items:center;padding:12px;background:#1b1517;border-radius:10px;font-size:12px}.history-row small{display:block;color:#9f8d91;margin-top:4px}.history-value{font-weight:800;white-space:nowrap}.footer{border-top:1px solid #ffffff12;margin-top:44px;padding:25px 0 35px;color:#8f7e82;font-size:11px}.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.footer button{background:none;border:0;color:#cdb8bc;text-decoration:underline;text-underline-offset:3px}
+.modal-backdrop{display:none;position:fixed;inset:0;z-index:60;background:#000b;backdrop-filter:blur(5px);padding:18px;overflow:auto}.modal-backdrop.open{display:grid;place-items:center}.modal{width:min(580px,100%);background:#171113;border:1px solid #63313a;border-radius:18px;box-shadow:0 25px 80px #000b;overflow:hidden}.modal-head{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid #ffffff12}.modal-head h3{font:800 26px/1 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:0}.close{border:0;background:#302023;color:white;width:34px;height:34px;border-radius:9px;font-size:20px}.modal-body{padding:20px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.form-field{display:grid;gap:7px}.form-field.full{grid-column:1/-1}.form-field label{font-size:11px;color:#c4b3b7;font-weight:700}.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:18px;flex-wrap:wrap}.hint{font-size:11px;line-height:1.5;color:#a9959a;margin:10px 0 0}.status{font-size:12px;color:#ffd0a1;margin-top:10px;min-height:17px}.admin-tools{display:none;margin:22px 0;padding:17px;border:1px solid #76333c;background:linear-gradient(135deg,#291115,#171113);border-radius:15px}.admin-tools.open{display:block}.admin-tools-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.admin-tools h3{margin:0;font:800 25px 'Barlow Condensed',sans-serif;text-transform:uppercase}.admin-tools p{margin:5px 0 0;color:#bda9ad;font-size:12px}.admin-tools-actions{display:flex;gap:8px;flex-wrap:wrap}.admin-list{margin-top:14px;display:grid;gap:7px}.admin-entry{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#170e10;border:1px solid #4c252d;padding:10px;border-radius:9px;font-size:12px;overflow-wrap:anywhere}.admin-entry button{background:#32171c;color:#ffaaaa;border:1px solid #71313a;border-radius:7px;padding:7px 9px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:90;background:#22171a;border:1px solid #6e333c;color:white;padding:12px 16px;border-radius:12px;box-shadow:var(--shadow);transition:.2s;max-width:calc(100% - 24px);font-size:13px}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.toolbar{grid-template-columns:1fr 1fr}.toolbar .field-wrap{grid-column:1/-1}.hero-panel{min-height:315px}.item-visual{height:160px}}
+@media(max-width:650px){.wrap{width:calc(100% - 22px)}.nav{height:66px}.brand-mark{width:38px;height:38px}.brand-name{font-size:22px}.brand-sub{font-size:8px}.hero{padding-top:13px}.hero-panel{min-height:420px;grid-template-columns:1fr}.hero-art{width:100%;height:55%;top:0;bottom:auto;background:linear-gradient(0deg,#16090b 0%,#16090b22 65%,#16090b33),url('assets/anomaly-hero.jpg') center 30%/cover no-repeat}.hero-copy{padding:205px 21px 22px;background:linear-gradient(0deg,#16090b 0%,#16090bf2 70%,transparent 100%);justify-content:end}.hero-copy h1{font-size:50px}.hero-copy p{font-size:13px;margin-bottom:16px}.hero-statline{margin-top:17px;gap:15px}.section-head h2{font-size:30px}.toolbar{padding:9px;gap:8px;grid-template-columns:1fr 1fr}.toolbar .field-wrap{grid-column:1/-1}.toolbar .select{min-width:0}.view-toggle{justify-content:flex-end}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.item-visual{height:135px}.item-info{padding:10px}.item-name{font-size:12px}.price{font-size:22px}.trend{font-size:9px}.item-meta{font-size:9px}.card-actions button{font-size:10px;padding:8px 3px}.list-mode .item-card{grid-template-columns:30px 74px minmax(0,1fr)}.list-mode .price-line{grid-column:3;grid-row:3;padding:0 10px 10px;display:flex;justify-content:flex-start}.list-mode .item-name,.list-mode .item-desc{grid-column:3;padding-right:8px}.list-mode .item-top{font-size:9px}.list-mode .item-visual{height:88px}.list-mode .price{font-size:20px}.history-panel{padding:13px;margin-top:32px}.history-row{font-size:11px}.form-grid{grid-template-columns:1fr}.form-field.full{grid-column:auto}.admin-trigger .primary-btn{font-size:11px;padding:9px}.admin-trigger{gap:5px}.count-pill{font-size:10px;padding:7px 9px}}
+@media(max-width:370px){.grid{grid-template-columns:1fr}.item-visual{height:185px}.hero-copy h1{font-size:44px}.brand-name{font-size:19px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="#inicio" aria-label="Anomalys Trading inicio">
+      <span class="brand-mark" id="brandMark"><img id="gameLogo" alt="Imagen del juego"><span id="brandFallback">✦</span></span>
+      <span><span class="brand-name">ANOMALYS</span><span class="brand-sub">Object value index</span></span>
+    </a>
+    <div class="nav-actions">
+      <div class="admin-trigger" id="adminTrigger">
+        <button class="primary-btn" id="openAdminTools">⚙ Mod menu</button>
+      </div>
+      <button class="icon-btn" id="menuButton" aria-label="Abrir menú">☰</button>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu">
+      <a href="#catalogo" class="nav-link">Catálogo de objetos</a>
+      <a href="#historial" class="nav-link">Historial de valores</a>
+      <button id="menuLogin">🔒 Acceso privado</button>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio" class="wrap">
+  <section class="hero">
+    <div class="hero-panel">
+      <div class="hero-art" role="img" aria-label="Personaje calabaza de Anomalys Trading"></div>
+      <div class="hero-copy">
+        <div class="eyebrow">Trading database · Community values</div>
+        <h1>El valor está<br>en los <span>detalles.</span></h1>
+        <p>Explorá objetos, compará valores y seguí los cambios del mercado en un catálogo oscuro, dinámico y hecho para encontrar todo más rápido.</p>
+        <div class="hero-buttons">
+          <a class="primary-btn" href="#catalogo">Explorar objetos ↘</a>
+          <button class="ghost-btn" id="heroHistory">Ver historial ⟶</button>
+        </div>
+        <div class="hero-statline">
+          <div><strong id="statItems">—</strong>objetos listados</div>
+          <div><strong id="statCategories">4</strong>categorías</div>
+          <div><strong id="statUpdates">Live</strong>valores comunitarios</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="catalogo">
+    <div class="section-head">
+      <div><div class="section-kicker">Base de datos</div><h2>Catálogo de objetos</h2><p>Buscá por nombre, filtrá y abrí cada ficha para ver sus detalles.</p></div>
+      <span class="count-pill" id="resultCount">Cargando objetos…</span>
+    </div>
+    <div class="toolbar">
+      <div class="field-wrap"><span class="search-icon">⌕</span><input class="field" id="searchInput" type="search" placeholder="Buscar un objeto…" autocomplete="off"></div>
+      <select class="select" id="categorySelect" aria-label="Filtrar categoría"><option value="">Todas las categorías</option><option>Cuchillo</option><option>Asesino</option><option>Cabaña</option><option>Otro</option></select>
+      <select class="select" id="sortSelect" aria-label="Ordenar objetos"><option value="featured">Destacados</option><option value="high">Valor: mayor a menor</option><option value="low">Valor: menor a mayor</option><option value="name">Nombre: A–Z</option><option value="updated">Actualizados</option></select>
+      <div class="view-toggle" aria-label="Modo de visualización"><button id="gridView" class="active" title="Vista de tarjetas">▦</button><button id="listView" title="Vista de lista">☷</button></div>
+    </div>
+    <div class="categories" id="categoryChips">
+      <button class="chip active" data-category="">✦ Todos</button>
+      <button class="chip" data-category="Cuchillo">⚔ Cuchillos</button>
+      <button class="chip" data-category="Asesino">☠ Asesino</button>
+      <button class="chip" data-category="Cabaña">⌂ Cabaña</button>
+      <button class="chip" data-category="Otro">✧ Otros</button>
+      <button class="chip" id="favoritesFilter">♡ Favoritos</button>
+    </div>
+    <div class="grid" id="itemsGrid" aria-live="polite"></div>
+  </section>
+
+  <section class="admin-tools" id="adminTools">
+    <div class="admin-tools-head">
+      <div><div class="section-kicker">Herramientas privadas</div><h3>Panel de administración</h3><p>Solo visible para una sesión autenticada con permisos de administrador.</p></div>
+      <div class="admin-tools-actions"><button class="primary-btn" id="newItemBtn">＋ Nuevo objeto</button><button class="ghost-btn" id="appearanceBtn">🎨 Personalizar página</button><button class="ghost-btn" id="teamBtn" hidden>♙ Administrar equipo</button><button class="ghost-btn" id="logoutBtn">Cerrar sesión</button></div>
+    </div>
+    <div class="admin-list" id="adminItemList"></div>
+    <div class="admin-list" id="teamList" hidden></div>
+  </section>
+
+  <section class="history-panel" id="historial">
+    <div class="section-head">
+      <div><div class="section-kicker">Registro transparente</div><h2>Últimos cambios</h2><p>Seguimiento de altas, modificaciones y bajas registradas.</p></div>
+      <button class="ghost-btn" id="refreshHistory">↻ Actualizar</button>
+    </div>
+    <div class="history-list" id="historyList"><div class="empty"><strong>Preparando historial…</strong>Los cambios aparecerán cuando la base de datos esté conectada.</div></div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner"><span>© <span id="year"></span> Anomalys · Proyecto comunitario, no oficial.</span><span>Valores informativos; pueden cambiar y no son garantía de intercambio.</span><button id="footerLogin">Acceso privado</button></div>
+</footer>
+
+<div class="modal-backdrop" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+  <div class="modal"><div class="modal-head"><h3 id="loginTitle">Acceso privado</h3><button class="close" data-close="loginModal" aria-label="Cerrar">×</button></div><form class="modal-body" id="loginForm"><div class="form-grid"><div class="form-field full"><label for="loginEmail">Correo del administrador</label><input class="field" id="loginEmail" type="email" required autocomplete="username" placeholder="tu-correo@ejemplo.com"></div><div class="form-field full"><label for="loginPassword">Contraseña</label><input class="field" id="loginPassword" type="password" required autocomplete="current-password" placeholder="Tu contraseña de Supabase"></div></div><p class="hint">El inicio de sesión se valida con Supabase. No hay una contraseña maestra dentro de esta página.</p><div class="status" id="loginStatus"></div><div class="modal-actions"><button type="button" class="ghost-btn" data-close="loginModal">Cancelar</button><button class="primary-btn" type="submit">Iniciar sesión</button></div></form></div>
+</div>
+
+<div class="modal-backdrop" id="itemModal" role="dialog" aria-modal="true" aria-labelledby="itemModalTitle">
+  <div class="modal"><div class="modal-head"><h3 id="itemModalTitle">Ficha del objeto</h3><button class="close" data-close="itemModal" aria-label="Cerrar">×</button></div><div class="modal-body" id="itemModalBody"></div></div>
+</div>
+
+<div class="modal-backdrop" id="editModal" role="dialog" aria-modal="true" aria-labelledby="editTitle">
+  <div class="modal"><div class="modal-head"><h3 id="editTitle">Nuevo objeto</h3><button class="close" data-close="editModal" aria-label="Cerrar">×</button></div>
+  <form class="modal-body" id="itemForm"><input type="hidden" id="editId"><div class="form-grid">
+    <div class="form-field"><label for="itemName">Nombre *</label><input class="field" id="itemName" required maxlength="100" placeholder="Nombre del objeto"></div>
+    <div class="form-field"><label for="itemCategory">Categoría *</label><select class="select" id="itemCategory"><option>Cuchillo</option><option>Asesino</option><option>Cabaña</option><option selected>Otro</option></select></div>
+    <div class="form-field"><label for="itemValue">Valor *</label><input class="field" id="itemValue" type="number" min="0" step="1" required placeholder="Ej. 125000"></div>
+    <div class="form-field"><label for="itemRarity">Rareza</label><input class="field" id="itemRarity" maxlength="60" placeholder="Ej. Legendario"></div>
+    <div class="form-field full"><label for="itemImage">URL de imagen (opcional)</label><input class="field" id="itemImage" type="url" placeholder="https://…"></div>
+    <div class="form-field full"><label for="itemDescription">Descripción</label><textarea class="area" id="itemDescription" rows="3" maxlength="500" placeholder="Detalles, demanda, estado…"></textarea></div>
+  </div><p class="hint">Usá una URL pública HTTPS para la imagen. El historial registra automáticamente los cambios de nombre, categoría y valor.</p><div class="status" id="itemStatus"></div><div class="modal-actions"><button type="button" class="ghost-btn" data-close="editModal">Cancelar</button><button class="primary-btn" type="submit">Guardar cambios</button></div></form></div>
+</div>
+
+<div class="modal-backdrop" id="teamModal" role="dialog" aria-modal="true" aria-labelledby="teamTitle">
+  <div class="modal"><div class="modal-head"><h3 id="teamTitle">Administrar equipo</h3><button class="close" data-close="teamModal" aria-label="Cerrar">×</button></div><form class="modal-body" id="teamForm"><div class="form-field"><label for="newAdminUuid">UUID del usuario en Supabase Authentication → Users</label><input class="field" id="newAdminUuid" required pattern="[0-9a-fA-F-]{36}" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"></div><p class="hint">Solo el propietario puede agregar o quitar administradores. Primero creá la cuenta en Supabase Authentication → Users y copiá su UID/UUID. Nunca compartas la contraseña.</p><div class="status" id="teamStatus"></div><div class="modal-actions"><button type="button" class="ghost-btn" data-close="teamModal">Cancelar</button><button class="primary-btn" type="submit">Agregar administrador</button></div></form></div>
+</div>
+<div class="modal-backdrop" id="appearanceModal" role="dialog" aria-modal="true" aria-labelledby="appearanceTitle">
+  <div class="modal"><div class="modal-head"><h3 id="appearanceTitle">Personalizar Anomalys</h3><button class="close" data-close="appearanceModal" aria-label="Cerrar">×</button></div>
+  <form class="modal-body" id="appearanceForm"><div class="form-grid">
+    <div class="form-field full"><label for="backgroundUrl">Imagen de fondo (URL HTTPS, opcional)</label><input class="field" id="backgroundUrl" type="url" placeholder="https://…/fondo.jpg"></div>
+    <div class="form-field"><label for="backgroundColor">Color de fondo</label><input class="field" id="backgroundColor" type="color" value="#0b0a0b" style="padding:5px;min-height:48px"></div>
+    <div class="form-field"><label for="gameName">Nombre del juego</label><input class="field" id="gameName" maxlength="80" placeholder="Ej. Survive the Killer"></div>
+    <div class="form-field full"><label for="gameImageUrl">Imagen del juego para la esquina superior izquierda (URL HTTPS)</label><input class="field" id="gameImageUrl" type="url" placeholder="https://…/logo-del-juego.png"></div>
+  </div><p class="hint">Estos ajustes se guardan para todos los visitantes cuando Supabase está conectado. Para que las imágenes se vean públicamente, usá enlaces HTTPS directos y accesibles sin iniciar sesión. No pegues claves privadas ni contraseñas.</p><div class="status" id="appearanceStatus"></div><div class="modal-actions"><button type="button" class="ghost-btn" id="previewAppearanceBtn">Vista previa</button><button type="button" class="ghost-btn" data-close="appearanceModal">Cancelar</button><button class="primary-btn" type="submit">Guardar apariencia</button></div></form></div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+/* Configuración pública del proyecto. Reemplazá solo estos dos valores.
+   Nunca pegues aquí la clave service_role/secret. */
+const SUPABASE_URL = "PEGAR_URL_DEL_PROYECTO";
+const SUPABASE_PUBLISHABLE_KEY = "PEGAR_CLAVE_PUBLISHABLE";
+
+const DEMO_ITEMS = [
+ {id:"demo-1",name:"Crimson Reaper",category:"Cuchillo",value:32500000,rarity:"Mítico",trend:"Rising",description:"Ejemplo visual: reemplazá este dato por el valor real de tu comunidad.",symbol:"⚔",color:"#ff4a36",featured:true},
+ {id:"demo-2",name:"Nocturne Edge",category:"Cuchillo",value:5500000,rarity:"Legendario",trend:"Stable",description:"Objeto de demostración; no es un precio verificado.",symbol:"✦",color:"#b58aff"},
+ {id:"demo-3",name:"Frostbite",category:"Asesino",value:250000,rarity:"Épico",trend:"Stable",description:"Ficha de ejemplo para mostrar el diseño del catálogo.",symbol:"❄",color:"#75c9ff"},
+ {id:"demo-4",name:"Ember Fang",category:"Cuchillo",value:100000,rarity:"Raro",trend:"Lowering",description:"Podés modificarlo desde el panel privado una vez conectado.",symbol:"♢",color:"#ff9a35"},
+ {id:"demo-5",name:"Moonlit Axe",category:"Cabaña",value:75000,rarity:"Raro",trend:"Stable",description:"Dato ficticio de demostración.",symbol:"✧",color:"#c77cff"},
+ {id:"demo-6",name:"Void Blossom",category:"Otro",value:37500,rarity:"Especial",trend:"Rising",description:"Dato ficticio de demostración.",symbol:"✿",color:"#ff5da8"},
+ {id:"demo-7",name:"Winter Shard",category:"Asesino",value:75000,rarity:"Raro",trend:"Stable",description:"Dato ficticio de demostración.",symbol:"❋",color:"#63e2e6"},
+ {id:"demo-8",name:"Golden Relic",category:"Otro",value:100000,rarity:"Épico",trend:"Stable",description:"Dato ficticio de demostración.",symbol:"✦",color:"#f6c453"}
+];
+const state={items:[],history:[],user:null,isAdmin:false,isOwner:false,db:null,category:"",favoritesOnly:false,favorites:new Set(JSON.parse(localStorage.getItem("anomalys-favs")||"[]")),view:"grid",configured:false,appearance:{background_url:"",background_color:"#0b0a0b",game_image_url:"",game_name:"Anomalys"}};
+const $=id=>document.getElementById(id);
+const fmt=n=>new Intl.NumberFormat("es-AR",{maximumFractionDigits:0}).format(Number(n)||0);
+const escapeHTML=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const isDemo=()=>!state.configured;
+function toast(message){$("toast").textContent=message;$("toast").classList.add("show");setTimeout(()=>$("toast").classList.remove("show"),2800)}
+function openModal(id){$(id).classList.add("open");document.body.style.overflow="hidden"}
+function closeModal(id){$(id).classList.remove("open");if(!document.querySelector(".modal-backdrop.open"))document.body.style.overflow=""}
+function setStatus(id,msg){$(id).textContent=msg||""}
+function showLogin(){setStatus("loginStatus","");openModal("loginModal")}
+function symbolFor(item){return item.symbol||({"Cuchillo":"⚔","Asesino":"☠","Cabaña":"⌂","Otro":"✦"}[item.category]||"✦")}
+function colorFor(item){return item.color||({"Cuchillo":"#ff4a36","Asesino":"#ba76ff","Cabaña":"#efb84d","Otro":"#68cce8"}[item.category]||"#ff4a36")}
+function renderItems(){
+ const q=$("searchInput").value.trim().toLowerCase(),cat=$("categorySelect").value||state.category,sort=$("sortSelect").value;
+ let list=state.items.filter(it=>(!q||`${it.name} ${it.description||""} ${it.rarity||""}`.toLowerCase().includes(q))&&(!cat||it.category===cat)&&(!state.favoritesOnly||state.favorites.has(String(it.id))));
+ if(sort==="high")list.sort((a,b)=>Number(b.value)-Number(a.value));else if(sort==="low")list.sort((a,b)=>Number(a.value)-Number(b.value));else if(sort==="name")list.sort((a,b)=>a.name.localeCompare(b.name));else if(sort==="updated")list.sort((a,b)=>new Date(b.updated_at||b.created_at||0)-new Date(a.updated_at||a.created_at||0));else list.sort((a,b)=>(b.featured?1:0)-(a.featured?1:0)||Number(b.value)-Number(a.value));
+ $("resultCount").textContent=`${list.length} ${list.length===1?"objeto":"objetos"}`;
+ $("statItems").textContent=state.items.length;
+ $("itemsGrid").className="grid"+(state.view==="list"?" list-mode":"");
+ if(!list.length){$("itemsGrid").innerHTML='<div class="empty"><strong>No encontramos objetos</strong>Probá cambiar el texto o los filtros de búsqueda.</div>';return}
+ $("itemsGrid").innerHTML=list.map(it=>{
+  const id=String(it.id),fav=state.favorites.has(id),c=colorFor(it),trend=it.trend||"Stable",trendClass=/lower|down|baj/i.test(trend)?"down":/stable|estable/i.test(trend)?"stable":"";
+  const image=it.image_url&&/^https:\/\/.+/i.test(it.image_url)?`<img src="${escapeHTML(it.image_url)}" alt="${escapeHTML(it.name)}" loading="lazy" onerror="this.remove()">`:`<span class="item-symbol" style="--rarity:${c};--glow:${c}">${escapeHTML(symbolFor(it))}</span>`;
+  return `<article class="item-card ${it.featured?"featured":""}" style="--rarity:${c}">
+    <div class="item-top"><span class="rarity-dot"><i></i>${escapeHTML(it.rarity||it.category||"Objeto")}</span><span>${escapeHTML(it.category||"Otro")}</span></div>
+    <button class="fav-btn ${fav?"on":""}" data-fav="${escapeHTML(id)}" aria-label="${fav?"Quitar":"Agregar"} favorito">${fav?"♥":"♡"}</button>
+    <div class="item-visual" data-open="${escapeHTML(id)}">${image}<span class="item-label">${escapeHTML(it.category||"Otro")}</span></div>
+    <div class="item-info"><div class="item-name" title="${escapeHTML(it.name)}">${escapeHTML(it.name)}</div><div class="item-desc">${escapeHTML(it.description||"Sin descripción añadida")}</div>
+    <div class="price-line"><span class="price">${fmt(it.value)}</span><span class="trend ${trendClass}">${escapeHTML(trend)}</span></div>
+    <div class="item-meta"><span>Valor comunitario</span><span>${it.updated_at?"Actualizado":"Ficha"}</span></div>
+    <div class="card-actions"><button data-open="${escapeHTML(id)}">Ver ficha ↗</button>${state.isAdmin&&!isDemo()?`<button data-edit="${escapeHTML(id)}">Editar</button>`:""}</div></div></article>`;
+ }).join("");
+}
+function renderHistory(){
+ const list=state.history.slice(0,8);
+ if(!state.configured){$("historyList").innerHTML='<div class="empty"><strong>Historial listo para conectar</strong>Los cambios aparecerán acá cuando configures Supabase y se registren modificaciones reales.</div>';return}
+ if(!list.length){$("historyList").innerHTML='<div class="empty"><strong>Todavía no hay movimientos</strong>Cuando se creen o modifiquen objetos, el historial se completará automáticamente.</div>';return}
+ $("historyList").innerHTML=list.map(h=>{
+  const date=h.changed_at?new Date(h.changed_at).toLocaleString("es-AR",{dateStyle:"medium",timeStyle:"short"}):"Fecha desconocida";
+  const label={INSERT:"Nuevo objeto",UPDATE:"Valor/datos modificados",DELETE:"Objeto eliminado"}[h.action]||h.action;
+  return `<div class="history-row"><div><strong>${escapeHTML(h.item_name)}</strong><small>${escapeHTML(label)} · ${escapeHTML(date)}</small></div><div class="history-value">${h.new_value==null?"—":fmt(h.new_value)}</div></div>`;
+ }).join("");
+}
+function renderAdminList(){
+ const box=$("adminItemList");if(!state.isAdmin||isDemo()){box.innerHTML="";return}
+ const list=state.items.slice().sort((a,b)=>a.name.localeCompare(b.name));
+ box.innerHTML=list.map(it=>`<div class="admin-entry"><span><strong>${escapeHTML(it.name)}</strong><br><span style="color:#a9959a">${escapeHTML(it.category)} · ${fmt(it.value)}</span></span><span style="display:flex;gap:6px"><button data-edit="${escapeHTML(it.id)}">Editar</button><button data-delete="${escapeHTML(it.id)}">Eliminar</button></span></div>`).join("")||'<div class="hint">Todavía no hay objetos.</div>';
+}
+function applyAppearance(a={}){
+ state.appearance={...state.appearance,...a};
+ const bg=String(state.appearance.background_url||"").trim();
+ const color=/^#[0-9a-f]{6}$/i.test(state.appearance.background_color||"")?state.appearance.background_color:"#0b0a0b";
+ document.documentElement.style.setProperty("--custom-bg",color);
+ if(bg&&/^https:\/\/.+/i.test(bg)){
+  document.documentElement.style.setProperty("--custom-bg-image",`url("${bg.replace(/[\"\\]/g,"")}")`);
+  document.body.classList.add("custom-bg");
+ }else{
+  document.documentElement.style.setProperty("--custom-bg-image","none");document.body.classList.remove("custom-bg");
+ }
+ const logo=String(state.appearance.game_image_url||"").trim();
+ if(logo&&/^https:\/\/.+/i.test(logo)){$("gameLogo").src=logo;$("brandMark").classList.add("has-image");}
+ else{$("gameLogo").removeAttribute("src");$("brandMark").classList.remove("has-image");}
+ const name=String(state.appearance.game_name||"").trim();$("brandMark").setAttribute("title",name||"Anomalys");
+}
+async function loadAppearance(){
+ if(!state.configured)return;
+ const {data,error}=await state.db.from("site_appearance").select("background_url,background_color,game_image_url,game_name").eq("id",1).maybeSingle();
+ if(error){console.warn("Apariencia no disponible todavía. Ejecutá el SQL de actualización.",error);return}
+ if(data)applyAppearance(data);
+}
+function openAppearance(){
+ if(!state.isAdmin){toast("Solo los administradores pueden personalizar la página.");return}
+ $("backgroundUrl").value=state.appearance.background_url||"";$("backgroundColor").value=state.appearance.background_color||"#0b0a0b";$("gameImageUrl").value=state.appearance.game_image_url||"";$("gameName").value=state.appearance.game_name||"Anomalys";setStatus("appearanceStatus","");openModal("appearanceModal");
+}
+function previewAppearance(){
+ const bg=$("backgroundUrl").value.trim(),logo=$("gameImageUrl").value.trim(),color=$("backgroundColor").value,name=$("gameName").value.trim();
+ if((bg&&!bg.startsWith("https://"))||(logo&&!logo.startsWith("https://"))){setStatus("appearanceStatus","Las imágenes deben usar enlaces HTTPS.");return}
+ applyAppearance({background_url:bg,background_color:color,game_image_url:logo,game_name:name||"Anomalys"});setStatus("appearanceStatus","Vista previa aplicada en este dispositivo. Tocá Guardar apariencia para publicarla para todos.");
+}
+async function saveAppearance(e){
+ e.preventDefault();if(!state.isAdmin||!state.configured){setStatus("appearanceStatus","Conectá Supabase e iniciá sesión como administrador para guardar los cambios para todos.");return}
+ const bg=$("backgroundUrl").value.trim(),logo=$("gameImageUrl").value.trim();
+ if((bg&&!bg.startsWith("https://"))||(logo&&!logo.startsWith("https://"))){setStatus("appearanceStatus","Las imágenes deben usar enlaces HTTPS.");return}
+ const payload={id:1,background_url:bg||null,background_color:$("backgroundColor").value,game_image_url:logo||null,game_name:$("gameName").value.trim()||"Anomalys",updated_at:new Date().toISOString()};
+ setStatus("appearanceStatus","Guardando…");const {error}=await state.db.from("site_appearance").upsert(payload,{onConflict:"id"});
+ if(error){setStatus("appearanceStatus","No se pudo guardar. Ejecutá la actualización SQL incluida en el ZIP y revisá los permisos.");console.error(error);return}
+ applyAppearance(payload);setStatus("appearanceStatus","Apariencia guardada para todos los visitantes.");toast("Apariencia de Anomalys actualizada");
+}
+async function refreshItems(){
+ if(!state.configured){state.items=DEMO_ITEMS.slice();renderItems();renderHistory();renderAdminList();return}
+ const {data,error}=await state.db.from("items").select("*").order("updated_at",{ascending:false});
+ if(error){toast("No se pudieron cargar los objetos. Revisá la configuración de Supabase.");console.error(error);return}
+ state.items=data||[];renderItems();renderAdminList();
+}
+async function refreshHistory(){
+ if(!state.configured){renderHistory();return}
+ const {data,error}=await state.db.from("item_history").select("*").order("changed_at",{ascending:false}).limit(30);
+ if(error){console.warn(error);return}state.history=data||[];renderHistory();
+}
+async function checkAccess(){
+ state.isAdmin=false;state.isOwner=false;
+ if(state.configured&&state.user){
+  const a=await state.db.rpc("is_anomalys_admin");state.isAdmin=!a.error&&a.data===true;
+  const o=await state.db.rpc("is_anomalys_owner");state.isOwner=!o.error&&o.data===true;
+ }
+ $("adminTrigger").classList.toggle("visible",state.isAdmin);
+ $("adminTools").classList.remove("open");
+ $("teamBtn").hidden=!state.isOwner;
+ $("teamList").hidden=true;
+ if(state.isAdmin){$("adminTools").classList.add("open");$("openAdminTools").textContent="⚙ Mod menu";toast(state.isOwner?"Sesión de propietario iniciada":"Sesión de administrador iniciada")}
+ renderItems();renderAdminList();
+}
+function openItem(id){
+ const it=state.items.find(x=>String(x.id)===String(id));if(!it)return;
+ const image=it.image_url&&/^https:\/\/.+/i.test(it.image_url)?`<img src="${escapeHTML(it.image_url)}" alt="" style="width:100%;max-height:220px;object-fit:contain;background:#100c0d;border-radius:10px">`:`<div style="height:180px;display:grid;place-items:center;background:radial-gradient(ellipse,#ffffff15,transparent),#100c0d;border-radius:10px;font-size:76px;color:${colorFor(it)}">${escapeHTML(symbolFor(it))}</div>`;
+ $("itemModalTitle").textContent=it.name;
+ $("itemModalBody").innerHTML=`${image}<div style="display:flex;justify-content:space-between;gap:12px;align-items:center;margin-top:15px"><span class="count-pill">${escapeHTML(it.category||"Otro")} · ${escapeHTML(it.rarity||"Sin rareza")}</span><strong style="font:800 32px 'Barlow Condensed',sans-serif">${fmt(it.value)}</strong></div><p style="color:#c1afb3;line-height:1.65;font-size:13px">${escapeHTML(it.description||"No hay una descripción disponible.")}</p><div class="hint">Valores comunitarios de referencia. Verificá siempre antes de realizar un intercambio.</div>${state.isAdmin&&!isDemo()?`<div class="modal-actions"><button class="primary-btn" data-edit="${escapeHTML(it.id)}">Editar objeto</button></div>`:""}`;
+ openModal("itemModal");
+}
+function openEdit(it){
+ if(!state.isAdmin||isDemo()){toast("Conectá Supabase e iniciá sesión como administrador.");return}
+ $("itemForm").reset();$("editId").value=it?.id||"";$("editTitle").textContent=it?"Editar objeto":"Nuevo objeto";
+ $("itemName").value=it?.name||"";$("itemCategory").value=it?.category||"Otro";$("itemValue").value=it?.value??"";$("itemRarity").value=it?.rarity||"";$("itemImage").value=it?.image_url||"";$("itemDescription").value=it?.description||"";
+ setStatus("itemStatus","");openModal("editModal");
+}
+async function loadTeam(){
+ if(!state.isOwner)return;
+ const {data,error}=await state.db.from("admins").select("user_id,role,created_at").order("created_at",{ascending:true});
+ if(error){toast("No se pudo cargar el equipo. Verificá la política de admins.");return}
+ const box=$("teamList");box.hidden=false;
+ box.innerHTML=(data||[]).map(a=>`<div class="admin-entry"><span><strong>${escapeHTML(a.role==="owner"?"Propietario":"Administrador")}</strong><br><span style="color:#a9959a">${escapeHTML(a.user_id)}</span></span>${a.role==="admin"?`<button data-remove-admin="${escapeHTML(a.user_id)}">Quitar acceso</button>`:"<span class='count-pill'>Protegido</span>"}</div>`).join("")||'<div class="hint">No hay administradores registrados.</div>';
+}
+async function init(){
+ $("year").textContent=new Date().getFullYear();
+ state.configured=!!(window.supabase&&SUPABASE_URL.startsWith("https://")&&!SUPABASE_URL.includes("PEGAR_")&&SUPABASE_PUBLISHABLE_KEY.length>20&&!SUPABASE_PUBLISHABLE_KEY.includes("PEGAR_"));
+ if(state.configured){
+  state.db=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
+  await loadAppearance();
+  const {data}=await state.db.auth.getSession();state.user=data.session?.user||null;
+  state.db.auth.onAuthStateChange((_event,session)=>{state.user=session?.user||null;setTimeout(async()=>{await checkAccess();await refreshItems();await refreshHistory()},0)});
+  await checkAccess();await refreshItems();await refreshHistory();
+ }else{
+  state.items=DEMO_ITEMS.slice();renderItems();renderHistory();
+  $("statItems").textContent=state.items.length;
+ }
+ if(!state.configured)console.info("Vista de demostración. Configurá Supabase en index.html para activar datos y administración reales.");
+}
+$("menuButton").addEventListener("click",()=>$("mobileMenu").classList.toggle("open"));
+document.querySelectorAll(".nav-link").forEach(a=>a.addEventListener("click",()=>$("mobileMenu").classList.remove("open")));
+$("menuLogin").addEventListener("click",()=>{ $("mobileMenu").classList.remove("open");showLogin()});
+$("footerLogin").addEventListener("click",showLogin);
+$("heroHistory").addEventListener("click",()=>$("historial").scrollIntoView({behavior:"smooth"}));
+$("searchInput").addEventListener("input",renderItems);
+$("categorySelect").addEventListener("change",()=>{state.category="";document.querySelectorAll("[data-category]").forEach(b=>b.classList.toggle("active",b.dataset.category===$("categorySelect").value));renderItems()});
+$("sortSelect").addEventListener("change",renderItems);
+$("categoryChips").addEventListener("click",e=>{const b=e.target.closest("[data-category]");if(!b)return;state.category=b.dataset.category;$("categorySelect").value=state.category;state.favoritesOnly=false;$("favoritesFilter").classList.remove("active");document.querySelectorAll("[data-category]").forEach(x=>x.classList.toggle("active",x===b));renderItems()});
+$("favoritesFilter").addEventListener("click",()=>{state.favoritesOnly=!state.favoritesOnly;$("favoritesFilter").classList.toggle("active",state.favoritesOnly);renderItems()});
+$("gridView").addEventListener("click",()=>{state.view="grid";$("gridView").classList.add("active");$("listView").classList.remove("active");renderItems()});
+$("listView").addEventListener("click",()=>{state.view="list";$("listView").classList.add("active");$("gridView").classList.remove("active");renderItems()});
+$("itemsGrid").addEventListener("click",e=>{
+ const fav=e.target.closest("[data-fav]");if(fav){const id=fav.dataset.fav;state.favorites.has(id)?state.favorites.delete(id):state.favorites.add(id);localStorage.setItem("anomalys-favs",JSON.stringify([...state.favorites]));renderItems();return}
+ const edit=e.target.closest("[data-edit]");if(edit){openEdit(state.items.find(x=>String(x.id)===edit.dataset.edit));return}
+ const open=e.target.closest("[data-open]");if(open)openItem(open.dataset.open);
+});
+$("adminItemList").addEventListener("click",async e=>{
+ const edit=e.target.closest("[data-edit]");if(edit){openEdit(state.items.find(x=>String(x.id)===edit.dataset.edit));return}
+ const del=e.target.closest("[data-delete]");if(del&&confirm("¿Eliminar este objeto? Esta acción quedará registrada en el historial.")){const {error}=await state.db.from("items").delete().eq("id",del.dataset.delete);if(error){toast("No se pudo eliminar: "+error.message);return}toast("Objeto eliminado");await refreshItems();await refreshHistory()}
+});
+$("itemModalBody").addEventListener("click",e=>{const edit=e.target.closest("[data-edit]");if(edit){const it=state.items.find(x=>String(x.id)===edit.dataset.edit);closeModal("itemModal");openEdit(it)}});
+$("openAdminTools").addEventListener("click",()=>$("adminTools").classList.toggle("open"));
+$("newItemBtn").addEventListener("click",()=>openEdit(null));
+$("appearanceBtn").addEventListener("click",openAppearance);
+$("appearanceForm").addEventListener("submit",saveAppearance);
+$("previewAppearanceBtn").addEventListener("click",previewAppearance);
+$("logoutBtn").addEventListener("click",async()=>{if(state.db)await state.db.auth.signOut();state.user=null;state.isAdmin=false;state.isOwner=false;$("adminTrigger").classList.remove("visible");$("adminTools").classList.remove("open");toast("Sesión cerrada")});
+$("loginForm").addEventListener("submit",async e=>{
+ e.preventDefault();if(!state.configured){setStatus("loginStatus","Primero conectá Supabase en index.html y publicá el sitio.");return}
+ setStatus("loginStatus","Verificando acceso…");
+ const {error}=await state.db.auth.signInWithPassword({email:$("loginEmail").value.trim(),password:$("loginPassword").value});
+ if(error){setStatus("loginStatus","No se pudo iniciar sesión. Revisá correo, contraseña y usuario en Supabase.");return}
+ setStatus("loginStatus","Acceso validado.");closeModal("loginModal");await checkAccess();await refreshItems();await refreshHistory();
+ if(!state.isAdmin)toast("La cuenta inició sesión, pero todavía no tiene permisos de administrador.");
+});
+$("itemForm").addEventListener("submit",async e=>{
+ e.preventDefault();if(!state.isAdmin||!state.configured)return;
+ const image=$("itemImage").value.trim();if(image&&!image.startsWith("https://")){setStatus("itemStatus","La imagen debe usar una URL HTTPS.");return}
+ const payload={name:$("itemName").value.trim(),category:$("itemCategory").value,value:Number($("itemValue").value),rarity:$("itemRarity").value.trim(),image_url:image||null,description:$("itemDescription").value.trim()};
+ const id=$("editId").value;setStatus("itemStatus","Guardando…");
+ const result=id?await state.db.from("items").update(payload).eq("id",id):await state.db.from("items").insert(payload);
+ if(result.error){setStatus("itemStatus","Error al guardar. Revisá permisos y campos.");console.error(result.error);return}
+ closeModal("editModal");toast(id?"Objeto actualizado":"Objeto creado");await refreshItems();await refreshHistory();
+});
+$("teamBtn").addEventListener("click",async()=>{await loadTeam();openModal("teamModal")});
+$("teamForm").addEventListener("submit",async e=>{
+ e.preventDefault();if(!state.isOwner)return;const uuid=$("newAdminUuid").value.trim();setStatus("teamStatus","Agregando administrador…");
+ const {error}=await state.db.from("admins").insert({user_id:uuid,role:"admin"});
+ if(error){setStatus("teamStatus","No se pudo agregar. Confirmá que el UUID exista en Authentication → Users y que no esté agregado.");return}
+ $("newAdminUuid").value="";setStatus("teamStatus","Administrador agregado.");toast("Nuevo administrador autorizado");await loadTeam();
+});
+$("teamList").addEventListener("click",async e=>{
+ const b=e.target.closest("[data-remove-admin]");if(!b||!state.isOwner)return;
+ if(!confirm("¿Quitar el acceso de administrador a esta cuenta?"))return;
+ const {error}=await state.db.from("admins").delete().eq("user_id",b.dataset.removeAdmin).eq("role","admin");
+ if(error){toast("No se pudo quitar el acceso.");return}toast("Acceso quitado");await loadTeam();
+});
+$("teamList").addEventListener("click",()=>{});
+$("refreshHistory").addEventListener("click",refreshHistory);
+document.querySelectorAll("[data-close]").forEach(b=>b.addEventListener("click",()=>closeModal(b.dataset.close)));
+document.querySelectorAll(".modal-backdrop").forEach(m=>m.addEventListener("click",e=>{if(e.target===m)closeModal(m.id)}));
+document.addEventListener("keydown",e=>{if(e.key==="Escape")document.querySelectorAll(".modal-backdrop.open").forEach(m=>closeModal(m.id))});
+applyAppearance(state.appearance);
+init();
+</script>
+</body>
+</html>
